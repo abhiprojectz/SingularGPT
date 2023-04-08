@@ -1,0 +1,7 @@
+paddleocr
+opencv-python-headless
+google-cloud-vision
+numpy
+matplotlib
+python-xlib
+pyvirtualdisplay

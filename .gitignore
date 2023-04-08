@@ -1,0 +1,11 @@
+# Ignore PyCharm IDE files
+*.iml
+.idea/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore local development configuration files
+.env
