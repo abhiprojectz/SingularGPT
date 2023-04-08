@@ -3,14 +3,21 @@
 
 With 🚀 **SingularGPT** you can easily instruct your device such as your PC using Natural language, with built in logic processing.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abhiprojectz/SingularGPT/blob/master/SGPT_Quickstart.ipynb)
+
 > For example: 
 
 Let's say you wish to accomplish any task on your device instead of writing automation scripts, then testing it further debugging it, playing around with co-ordinates. 
 
-<h2 align="center"> **Query:** Hey, please click on the item with text "Document Writer" after that click on the image with path "image.png" after that scroll down and then find element that is top of text "File" , double left click it. </h2>
+**Query:** Hey, please click on the item with text "Document Writer" after that click on the image with path "image.png" after that scroll down and then find element that is top of text "File" , double left click it.
 
 
 The **SingularGPT** will process it and does the task.
+
+
+---
+
+
 
 # :star2: Demo 
 
@@ -58,7 +65,11 @@ ZexUI is a standalone library that uses image processing techniques for GUI auto
 
 # :star2: Installation
 
-Make this this project currently works on linux and x11 servers.
+Make sure this project currently works on linux and x11 servers.
+
+You may just run it in google colab with a GPU.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abhiprojectz/SingularGPT/blob/master/SGPT_Quickstart.ipynb)
 
 The `requirements.txt` file specifies the following packages:
 
@@ -125,7 +136,7 @@ Come, star the project and let's build it together.
 
 + Can internally process them.
 
-+ Automates your device using my previous project ZexUI
++ Automates your device
 
 + Build automations scripts by its own
 
