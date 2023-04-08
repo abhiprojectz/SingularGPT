@@ -101,6 +101,44 @@ python main.py
 
 ---
 
+# Automations lib apis
+
+Here are some methods and thier usage.
+
+Sure! Here are the descriptions for each method:
+
+- `text()`: This method is used to locate a text element on the webpage based on the text content provided in the query.
+
+- `textRegex()`: This method is used to locate a text element on the webpage based on a regular expression provided in the query.
+
+- `textContains()`: This method is used to locate a text element on the webpage that contains a specific word provided in the query.
+
+- `image()`: This method is used to locate an image element on the webpage based on the image path provided in the query.
+
+- `findLeftOf()`: This method is used to locate an element that is to the left of the text/image provided in the query.
+
+- `findRightOf()`: This method is used to locate an element that is to the right of the text/image provided in the query.
+
+- `findTopOf()`: This method is used to locate an element that is above the text/image provided in the query.
+
+- `findBottomOf()`: This method is used to locate an element that is below the text/image provided in the query.
+
+- `findNearestTo()`: This method is used to locate the element that is nearest to the text/image provided in the query.
+
+- `click()`: This method is used to click on the element that is located using the text/image or any other method.
+
+- `mouseMove()`: This method is used to move the mouse to the element that is located using the text/image or any other method.
+
+- `scroll_up()`: This method is used to scroll up the webpage.
+
+- `scroll_down()`: This method is used to scroll down the webpage.
+
+- `scroll_left()`: This method is used to scroll left on the webpage.
+
+- `scroll_right()`: This method is used to scroll right on the webpage.
+
+... More are on the docs. 
+
 # :star2: Project roadmap 
 
 This project is still in developemnt but its ready for linux (ubuntu).
