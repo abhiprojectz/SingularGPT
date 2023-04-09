@@ -1,19 +1,17 @@
 
-**SingularGPT** is a open source project that aims to automate complex tasks such as device automation using the latest trending LLM models that is  ChatGPT & GPT-4.
+**SingularGPT** is a open source project that automates your device using ChatGPT & GPT-4.
 
-With 🚀 **SingularGPT** you can easily instruct your device such as your PC using Natural language, with built in logic processing.
+With 🚀 **SingularGPT** you can easily instruct your device with simple text based queries.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abhiprojectz/SingularGPT/blob/master/SGPT_Quickstart.ipynb)
 
 > For example: 
 
-Let's say you wish to accomplish any task on your device instead of writing automation scripts, then testing it further debugging it, playing around with co-ordinates. 
+Let's say you need to click on button that have a text as 'File' just say it: 
 
-**Query:** Hey, please click on the item with text "Document Writer" after that click on the image with path "image.png" after that scroll down and then find element that is top of text "File" , double left click it.
+**Query:** Hey, please click on the item with text File.
 
-
-The **SingularGPT** will process it and does the task.
-
+It will perform the action by processing your query, turning them to its undernstandable instructions and execute them.
 
 ---
 
@@ -26,6 +24,16 @@ https://user-images.githubusercontent.com/64596494/230719544-a9bee6f2-4158-4784-
 
 
 ---
+
+
+**To visualize this see this bot on Poe**
+
+![](https://user-images.githubusercontent.com/64596494/230727123-b01d6607-9f08-4abe-ae00-bda1eacbc5bf.PNG)
+
+
+![djlkdj](https://user-images.githubusercontent.com/64596494/230751800-1100bfa5-f9a7-4971-9224-6f0c442b5df1.PNG)
+
+
 
 # :star2: How it locates element ?
 
@@ -57,7 +65,7 @@ zex.text('Edit').FindLeftOf().click() # Used to locate the element that is just 
 
 ---
 
-**You may even locate and perform actions to the element that is left or right or even the most nearest element to it.**
+**Locate and perform actions to the element that is left or right or even the most nearest element to it.**
 
 ZexUI is a standalone library that uses image processing techniques for GUI automation.
 
@@ -90,6 +98,8 @@ Make sure that you run this command in the same directory where the `requirement
 ## :star2: Quickstart
 
 Create a `.env` file with `OPENAI_API` and place your openai_api api there or pass as environment variable.
+
+Put automation scripts in `script.py` and run it.
 
 Write your prompt query in `Prompts/prompts.txt` file or,
 pass as a string in the `main.py` file.
@@ -150,8 +160,6 @@ You may directly test it in Google Colab.
 
 + Android - pending
 
-Come, star the project and let's build it together.
-
 ---
 
 **This is what this project aims and tries to achieve the same.**
@@ -174,19 +182,10 @@ Come, star the project and let's build it together.
 
 + Can internally process them.
 
-+ Automates your device
-
 + Build automations scripts by its own
 
-+ Build custom functions to achieve what GPT can suggest.
++ Automates your device
 
-> It's not over...
-
-+ Write assignments for real ! Yes not joking, [RealWriterGPT] this project is in development it uses SingularGPT + RealWriterGPT + IOT development boards and stuffs to achieve. 
-
-> Uses tensorflow to generate handwriting.
-
-So, that you can just says it "Please write my assignment using Addon:RealWriterGPT from the questions placed on desktop with text "questions".
 
 ---
 
@@ -198,24 +197,18 @@ In short:
 
 AI computer vision + Automation (ZexUI) + GPT
 
----
-
-# :star2: Docs 
-
-It's currently in development.
 
 ---
 
 # :star2: Features 
 
-+ No crawling mechanism , no hassle instead AI based component detection
++ No crawling mechanism
 + Elements detection
 + Text detection
 + Components detection based on estimates
 + Automate your device using NLP instructions
-+ Adds-on in a very lightweight presets that saves time and money
++ Adds-on in a very lightweight presets
 + Works even headless on a x11 server
-+ Internal logic processing for complex tasks
 
 
 # :star2: Help 
