@@ -2,16 +2,21 @@
 import re 
 import cv2
 import subprocess
-from .x11_commands import *
 import json 
 import numpy as np 
 from vision.vision_utils import detect_component
 from zexui_lib.base_functions import * 
 from time import sleep 
-
+from config.CONFIG import _PLATFORM
 """
 Main automation library that automates the device level stuffs.
 """
+
+if _PLATFORM == 'windows':
+    from .py_gui_commands import * 
+elif _PLATFORM == 'linux':
+    from .x11_commands import *
+
 
 class ZexUI(object):
     """
@@ -30,7 +35,7 @@ class ZexUI(object):
         This function captures the screenshot of the current screen and saves it
         to the path specified by self.capture_png variable.
         """
-        subprocess.run(f"scrot --overwrite {self.capture_png}", shell=True)
+        capture(self.capture_png)
         self.img_path = self.capture_png
 
     def _preprocess_img(self, _img):
@@ -495,6 +500,8 @@ class ZexUI(object):
         # Move the mouse cursor to the x and y coordinates of the target object
         mouse_move(x, y)
 
+    def wait(self, x):
+        wait(x)
 
     def scroll_up(self, x):
         scroll_up(x)
@@ -507,4 +514,14 @@ class ZexUI(object):
 
     def scroll_right(self, x):
         scroll_right(self, x)
+
+    def mouseToggleUp(self):
+        # Get the x and y coordinates of the target object
+        x, y = self.cords[0], self.cords[1]
+        mouseToggleUp(x, y)
+
+    def mouseToggleDown(self):
+        # Get the x and y coordinates of the target object
+        x, y = self.cords[0], self.cords[1]
+        mouseToggleDown(x, y)
 

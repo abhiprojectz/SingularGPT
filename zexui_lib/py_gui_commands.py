@@ -1,12 +1,16 @@
 import subprocess
 import re
 from time import sleep
+import pyautogui
+import random
 
 
 def capture(_img):
     # Capture the entire screen
-    subprocess.run(f"scrot --overwrite {_img}", shell=True)
-    
+    screenshot = pyautogui.screenshot()
+    print(_img)
+    # Save the screenshot to the same file, overwriting the previous screenshot
+    screenshot.save(_img)
 
 def click_one(x, y):
     """
@@ -17,13 +21,12 @@ def click_one(x, y):
     x (int): The x-coordinate on the screen where the left-click operation needs to be performed.
     y (int): The y-coordinate on the screen where the left-click operation needs to be performed.
     """
-    # Get the current window ID
-    window = subprocess.check_output("xdotool getmouselocation", shell=True)
-    wind__ = int(re.search(r'\d+', str(window).split(" ")[-1].strip()).group())
+    
+    # # move the mouse to a specific coordinate
+    pyautogui.moveTo(x, y, duration=0.6)
 
-    # Move the mouse to the provided x and y coordinates and perform a left click
-    subprocess.run(f"xdotool mousemove --window {wind__} {x} {y} click 1", shell=True)
-
+    # click the left mouse button
+    pyautogui.click(x, y)
 
 def click_two(x, y):
     """
@@ -34,12 +37,11 @@ def click_two(x, y):
     x (int): The x-coordinate on the screen where the right-click operation needs to be performed.
     y (int): The y-coordinate on the screen where the right-click operation needs to be performed.
     """
-    # Get the current window ID
-    window = subprocess.check_output("xdotool getmouselocation", shell=True)
-    wind__ = int(re.search(r'\d+', str(window).split(" ")[-1].strip()).group())
+    # move the mouse to a specific coordinate
+    pyautogui.moveTo(x, y)
 
     # Move the mouse to the provided x and y coordinates and perform a right click
-    subprocess.run(f"xdotool mousemove --window {wind__} {x} {y} click 2", shell=True)
+    pyautogui.doubleClick(x, y)
 
 
 def write(_text, delay):
@@ -51,9 +53,10 @@ def write(_text, delay):
     """
 
     if delay: 
-        subprocess.run(f'xdotool type --delay 50 "{_text}"', shell=True)
+        delay = 0.2
+        pyautogui.typewrite(_text, interval=delay)
     else:
-        subprocess.run(f'xdotool type "{_text}"', shell=True)
+        pyautogui.write(_text)
 
 
 def press_key(x):
@@ -63,8 +66,8 @@ def press_key(x):
     Parameters:
     x (str): The key to be press. For example, 'ctrl+v', 'ctrl+t', 'shift+tab' etc.
     """
-
-    subprocess.run(f"xdotool key {x}", shell=True)
+    # press and release a key
+    pyautogui.press(x)
 
 
 def left_click():
@@ -72,15 +75,15 @@ def left_click():
     This function uses the xdotool utility to perform a left-click (mouse button 1) operation.
     """
 
-    subprocess.run("xdotool click 1", shell=True)
-
+    # click the left mouse button
+    pyautogui.click()
 
 def middle_click():
     """
     This function uses the xdotool utility to perform a middle-click (mouse button 2) operation.
     """
 
-    subprocess.run("xdotool click 2", shell=True)
+    pyautogui.middleClick()
 
 
 def right_click():
@@ -88,8 +91,7 @@ def right_click():
     This function uses the xdotool utility to perform a right-click (mouse button 3) operation.
     """
 
-    subprocess.run("xdotool click 3", shell=True)
-
+    pyautogui.rightClick()
 
 def left_click_at(x,y):
     """
@@ -101,7 +103,7 @@ def left_click_at(x,y):
     y (int): The y-coordinate on the screen where the left-click operation needs to be performed.
     """
 
-    subprocess.run(f"xdotool mousemove {x} {y} click 1", shell=True)
+    pyautogui.click(x, y)
 
 
 def middle_click_at(x,y):
@@ -114,7 +116,7 @@ def middle_click_at(x,y):
     y (int): The y-coordinate on the screen where the middle-click operation needs to be performed.
     """
 
-    subprocess.run(f"xdotool mousemove {x} {y} click 2", shell=True)
+    pyautogui.middleClick(x, y)
 
 
 def right_click_at(x,y):
@@ -127,8 +129,7 @@ def right_click_at(x,y):
     y (int): The y-coordinate on the screen where the right-click operation needs to be performed.
     """
 
-    subprocess.run(f"xdotool mousemove {x} {y} click 3", shell=True)
-
+    pyautogui.rightClick(x, y)
 
 def mouse_move(x, y):
     """
@@ -139,61 +140,48 @@ def mouse_move(x, y):
     y (int): The y-coordinate on the screen where the mouse cursor needs to be moved.
     """
 
-    subprocess.run(f"xdotool mousemove {x} {y}", shell=True)
-
+    # move the mouse to a specific coordinate
+    pyautogui.moveTo(x, y)
 
 def scroll_up(x):
     """
     Simulates scrolling up by a specified x using xdotool.
     :param x: The x of scrolling to be done vertically (in pixels)
     """
-    subprocess.run(['xdotool', 'mousemove_relative', '0', f'-{x}'])
+    pyautogui.scroll(x)
 
 def scroll_down(x):
     """
     Simulates scrolling down by a specified x using xdotool.
     :param x: The x of scrolling to be done vertically (in pixels)
     """
-    subprocess.run(['xdotool', 'mousemove_relative', '0', f'{x}'])
+    pyautogui.scroll(-x)
 
 def scroll_left(x):
     """
     Simulates scrolling left with the mouse wheel using xdotool.
     :param x: The x of scrolling to be done horizontally (in pixels)
     """
-    subprocess.run(['xdotool', 'mousemove_relative', '--', f'-{x}', '0'])
+    pyautogui.hscroll(x)
 
 def scroll_right(x):
     """
     Simulates scrolling right with the mouse wheel using xdotool.
     :param x: The x of scrolling to be done horizontally (in pixels)
     """
-    subprocess.run(['xdotool', 'mousemove_relative', f'{x}', '0'])
-
+    pyautogui.hscroll(-x)
 
 def wait(x):
     if not x:
         x = 3
     sleep(x)
 
-
 def mouseToggleUp(self):
     # Get the x and y coordinates of the target object
     x, y = self.cords[0], self.cords[1]
-    mouseToggleUp(x, y)
+    pyautogui.mouseUp(x=x, y=y, button='left')
 
 def mouseToggleDown(self):
     # Get the x and y coordinates of the target object
     x, y = self.cords[0], self.cords[1]
-    mouseToggleDown(x, y)
-
-# $ xdotool click 3
-# Replace “3” with with any number from the reference below:
-
-# 1 – Left click
-# 2 – Middle click
-# 3 – Right click
-# 4 – Scroll wheel up
-# 5 – Scroll wheel down
-
-# $ xdotool mousemove 100 100 click 3
+    pyautogui.mouseDown(x=x, y=y, button='left')

@@ -26,6 +26,64 @@ https://user-images.githubusercontent.com/64596494/230719544-a9bee6f2-4158-4784-
 ---
 
 
+# :star2: How to Use ?
+
+You may just run it in google colab with a GPU.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abhiprojectz/SingularGPT/blob/master/SGPT_Quickstart.ipynb)
+
+**Follow these steps carefully**
+
+- 1. Install all the requirements
+
+```
+pip install -r requirements.txt
+```
+
+Make sure that you run this command in the same directory where the `requirements.txt` file is located.
+
+- 2. If you are in linux then install below libs
+
+```sh 
+
+!sudo apt-get install xvfb xorg xserver-xorg scrot imagemagick x11-utils xdotool
+
+```
+
+- 3. Create a .env file and place your OPENAI_API and change your platform name in `config/CONFIG.py`
+
+if you are on linux set as: `_PLATFORM` as linux [By default is `windows`]
+
+- 4. Run this file `main.py` by passing your query.
+
+```py
+
+python main.py
+
+```
+
+- 5. Use `SingularGPT` bot if you are stuck or raise a issue
+
+- 6. Make sure your instructions are in `script.py` file.
+
+
+## :star2: Quickstart
+
+Create a `.env` file with `OPENAI_API` and place your openai_api api there or pass as environment variable.
+
+Put automation scripts in `script.py` and run it.
+
+Write your prompt query in `Prompts/prompts.txt` file or,
+pass as a string in the `main.py` file.
+
+```py
+# Run the main script.
+python main.py
+```
+
+---
+
+
 **To visualize this see this bot on Poe**
 
 ![](https://user-images.githubusercontent.com/64596494/230727123-b01d6607-9f08-4abe-ae00-bda1eacbc5bf.PNG)
@@ -33,6 +91,9 @@ https://user-images.githubusercontent.com/64596494/230719544-a9bee6f2-4158-4784-
 
 ![djlkdj](https://user-images.githubusercontent.com/64596494/230751800-1100bfa5-f9a7-4971-9224-6f0c442b5df1.PNG)
 
+
+
+---
 
 
 # :star2: How it locates element ?
@@ -71,47 +132,8 @@ ZexUI is a standalone library that uses image processing techniques for GUI auto
 
 ---
 
-# :star2: Installation
 
-Make sure this project currently works on linux and x11 servers.
-
-You may just run it in google colab with a GPU.
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abhiprojectz/SingularGPT/blob/master/SGPT_Quickstart.ipynb)
-
-The `requirements.txt` file specifies the following packages:
-
-- `paddleocr`: A deep learning-based optical character recognition (OCR) toolkit.
-- `opencv-python-headless`: A computer vision library that provides real-time computer vision applications.
-- `google-cloud-vision`: A cloud-based OCR service that can be used to extract text from images.
-- `numpy`: A fundamental package for scientific computing in Python.
-- `matplotlib`: A visualization library in Python for 2D plots and graphs.
-
-You can install these packages, along with their dependencies, using the following command: 
-
-```
-pip install -r requirements.txt
-```
-
-Make sure that you run this command in the same directory where the `requirements.txt` file is located.
-
-## :star2: Quickstart
-
-Create a `.env` file with `OPENAI_API` and place your openai_api api there or pass as environment variable.
-
-Put automation scripts in `script.py` and run it.
-
-Write your prompt query in `Prompts/prompts.txt` file or,
-pass as a string in the `main.py` file.
-
-```py
-# Run the main script.
-python main.py
-```
-
----
-
-# Automations lib apis
+#  :star2: Automations lib apis
 
 Here are some methods and thier usage.
 
@@ -149,18 +171,6 @@ Sure! Here are the descriptions for each method:
 
 ... More are on the docs. 
 
-# :star2: Project roadmap 
-
-This project is still in developemnt but its ready for linux (ubuntu).
-You may directly test it in Google Colab.
-
-+ Linux - done 
-
-+ Windows - pending
-
-+ Android - pending
-
----
 
 **This is what this project aims and tries to achieve the same.**
 
