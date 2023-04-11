@@ -34,7 +34,9 @@ You may just run it in google colab with a GPU.
 
 **Follow these steps carefully**
 
-- 1. Install all the requirements
+1. Clone the repository using `git clone https://github.com/abhiprojectz/SingularGPT.git` and `cd` into the concerned directory
+
+2. Install all the requirements
 
 ```
 pip install -r requirements.txt
@@ -42,7 +44,7 @@ pip install -r requirements.txt
 
 Make sure that you run this command in the same directory where the `requirements.txt` file is located.
 
-- 2. If you are in linux then install below libs
+3. If you are in linux then install below libs
 
 ```sh 
 
@@ -50,11 +52,11 @@ Make sure that you run this command in the same directory where the `requirement
 
 ```
 
-- 3. Create a .env file and place your OPENAI_API and change your platform name in `config/CONFIG.py`
+4. Create a .env file and place your OPENAI_API key and change your platform name in `config/CONFIG.py`
 
 if you are on linux set as: `_PLATFORM` as linux [By default is `windows`]
 
-- 4. Run this file `main.py` by passing your query.
+5. Run this file `main.py` by passing your query.
 
 ```py
 
@@ -62,14 +64,14 @@ python main.py
 
 ```
 
-- 5. Use `SingularGPT` bot if you are stuck or raise a issue
+6. Use `SingularGPT` bot if you are stuck or raise a issue
 
-- 6. Make sure your instructions are in `script.py` file.
+7. Make sure your instructions are in `script.py` file.
 
 
 ## :star2: Quickstart
 
-Create a `.env` file with `OPENAI_API` and place your openai_api api there or pass as environment variable.
+Create a `.env` file with `OPENAI_API` and place your openai_api key there or pass as environment variable.
 
 Put automation scripts in `script.py` and run it.
 
