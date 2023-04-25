@@ -11,7 +11,7 @@ Let's say you need to click on button that have a text as 'File' just say it:
 
 **Query:** Hey, please click on the item with text File.
 
-It will perform the action by processing your query, turning them to its undernstandable instructions and execute them.
+It will perform the action by processing your query, turning them to its understandable instructions and execute them.
 
 ---
 
